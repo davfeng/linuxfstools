@@ -7115,6 +7115,7 @@ int main(int argc, char* argv[])
 
 	if(argc < 2){
 		printf("usage: inodes dev [ino]\n");
+		return 0;
 	}
 	retval = ext2fs_open2(argv[1], 0, EXT2_FLAG_64BITS, 0, 0,
 			      unix_io_manager, &current_fs);

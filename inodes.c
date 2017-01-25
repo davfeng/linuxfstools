@@ -1,6 +1,6 @@
 
-//arm-linux-gnueabi-gcc -o inodes_arm -static inodes.c
-//gcc -o inodes -static inodes.c
+//arm-linux-gnueabi-gcc -o inodes_arm -static -D_FILE_OFFSET_BITS=64 inodes.c
+//gcc -o inodes -static -D_FILE_OFFSET_BITS=64 inodes.c
 
 #define _INO_T_DEFINED 1
 
@@ -123,6 +123,7 @@ typedef long long       ext2_loff_t;
 #else
 typedef long            ext2_loff_t;
 #endif
+typedef off_t ext2_loff_t;
 
 #ifdef __STDC__
 #define NOARGS void

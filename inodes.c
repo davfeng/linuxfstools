@@ -115,14 +115,6 @@ typedef __u32 	ext2_dirhash_t;
 
 typedef long errcode_t;
 
-/*
- * ext2_loff_t is defined here since unix_io.c needs it.
- */
-#if defined(__GNUC__) || defined(HAS_LONG_LONG)
-typedef long long       ext2_loff_t;
-#else
-typedef long            ext2_loff_t;
-#endif
 typedef off_t ext2_loff_t;
 
 #ifdef __STDC__
